@@ -1,5 +1,5 @@
 export class RecursionService {
-    static power(base, exp) {
+    static power(base: number, exp: number): number {
         if (exp === 0) {
             return 1;
         }
@@ -9,28 +9,28 @@ export class RecursionService {
         return base * this.power(base, exp - 1);
     }
 
-    static factorial(n) {
+    static factorial(n: number): number {
         if (n === 0 || n === 1) {
             return 1;
         }
         return n * this.factorial(n - 1);
     }
 
-    static productOfArray(arr) {
+    static productOfArray(arr: number[]): number {
         if (arr.length === 0) {
             return 1;
         }
         return arr[0] * this.productOfArray(arr.slice(1));
     }
 
-    static recursiveRange(n) { // sum of first n numbers
+    static recursiveRange(n: number): number { // sum of first n numbers
         if (n === 0) {
             return 0;
         }
         return n + this.recursiveRange(n - 1);
     }
 
-    static fibonacci(n) {
+    static fibonacci(n: number): number {
         if (n === 0) {
             return 0;
         }
@@ -40,14 +40,14 @@ export class RecursionService {
         return this.fibonacci(n - 2) + this.fibonacci(n - 1);
     }
 
-    static reverseString(str) {
+    static reverseString(str: string): string {
         if (str.length === 0) {
             return "";
         }
         return this.reverseString(str.substring(1)) + str[0];
     }
 
-    static isPalindrome(str) {
+    static isPalindrome(str: string): boolean {
         if (str.length === 1) {
             return true;
         }
@@ -61,7 +61,7 @@ export class RecursionService {
         }
     }
 
-    static flattenArray(arr) {
+    static flattenArray(arr: any[]): any {
         if (arr.length === 0) {
             return [];
         }
@@ -73,8 +73,8 @@ export class RecursionService {
         }
     }
 
-    static flattenArrayV2(arr) {
-        var newArr = []
+    static flattenArrayV2(arr: any[]): any[] {
+        var newArr: any[] = []
         for (var i = 0; i < arr.length; i++) {
             if (Array.isArray(arr[i])) {
                 newArr = newArr.concat(this.flattenArrayV2(arr[i]))
@@ -85,7 +85,7 @@ export class RecursionService {
         return newArr;
     }
 
-    static capitalizeFirstLetter(arr) {
+    static capitalizeFirstLetter(arr: string[]): string[] {
         if (arr.length === 0) {
             return [];
         }
@@ -94,14 +94,14 @@ export class RecursionService {
         return [capitalized].concat(this.capitalizeFirstLetter(arr.splice(1)));
     }
 
-    static capitalizeWords(arr) {
+    static capitalizeWords(arr: string[]): string[] {
         if (arr.length === 0) {
             return [];
         }
         return [arr[0].toLocaleUpperCase()].concat(this.capitalizeWords(arr.splice(1)));
     }
 
-    static nestedEvenSum(obj) {
+    static nestedEvenSum(obj: any) {
         let sum = 0;
         for (let prop in obj) {
             if (obj[prop] === null || obj[prop] === undefined) {
@@ -121,8 +121,8 @@ export class RecursionService {
      to strings.
     */
 
-    static stringifyNumbers(obj) {
-        const newObj = {};
+    static stringifyNumbers(obj: any) {
+        const newObj: any = {};
         for (let prop in obj) {
             if (obj[prop] === null || obj[prop] === undefined) {
                 continue;
@@ -137,8 +137,8 @@ export class RecursionService {
         return newObj;
     }
 
-    static collectStrings(obj) {
-        let strArr = [];
+    static collectStrings(obj: any) {
+        let strArr: string[] = [];
         for (let prop in obj) {
             if (typeof obj[prop] === "string") {
                 strArr.push(obj[prop]);

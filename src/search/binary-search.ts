@@ -1,4 +1,4 @@
-const binarySearch = (arr, num) => {
+const binarySearch = (arr: number[], num: number) => {
     let left = 0;
     let right = arr.length - 1;
     while(left <= right) {
