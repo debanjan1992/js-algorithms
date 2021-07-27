@@ -7,7 +7,6 @@
     ],
     "allowJs": true,
     "sourceMap": true,
-    // "outFile": "./",
     "outDir": "./build",
     "rootDir": "./src",
     "strict": true,
