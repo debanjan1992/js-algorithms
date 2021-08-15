@@ -168,4 +168,8 @@ export class DoublyLinkedList<T> {
             return removedNode;
         }
     }
+
+    reverse() {
+        
+    }
 }
